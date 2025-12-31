@@ -1,5 +1,5 @@
 # 💫 About Me:
-👋 Hi, I’m Shikhar Dixit<br><br>A Cybersecurity & Full-Stack Engineering enthusiast passionate about building secure, scalable, and AI-powered systems.<br>I enjoy transforming complex security problems into practical, real-world solutions using modern tech stacks, AI/LLMs, and clean system design.<br><br>🚀 I’m currently working on<br><br>CyberRakshak – an AI-powered vulnerability analysis platform integrating Nmap, Nuclei, Nikto & OpenVAS with CVE/CVSS intelligence<br><br>LLM + RAG pipelines for cybersecurity use-cases (threat analysis, remediation insights)<br><br>Scalable backend systems using FastAPI, async workflows, and REST APIs<br><br>🤝 I’m looking to collaborate on<br><br>Cybersecurity tools & SOC platforms<br><br>AI / LLM / RAG-based applications<br><br>Open-source security automation projects<br><br>Hackathon & problem-statement driven products<br><br>🆘 I’m looking for help with<br><br>Advanced LLM optimization & evaluation<br><br>Security data pipelines at scale<br><br>Cloud-native DevSecOps practices<br><br>Improving real-time vulnerability correlation<br><br>🌱 I’m currently learning<br><br>Advanced cybersecurity concepts (threat modeling, remediation workflows)<br><br>LLM orchestration & vector databases<br><br>System design for large-scale platforms<br><br>Docker & Linux-based deployment pipelines<br><br>💬 Ask me about<br><br>Cybersecurity tools (Nmap, Nuclei, OpenVAS, CVE/CVSS)<br><br>FastAPI, REST APIs & backend architecture<br><br>AI chatbots, RAG systems & embeddings<br><br>Hackathons, Smart India Hackathon & team leadership<br><br>⚡ Fun fact<br><br>I love breaking systems to understand them better — then rebuilding them stronger and smarter 🔐🤖
+👋 Hi, I’m Shikhar Dixit<br>A Cybersecurity & Full-Stack Engineering enthusiast passionate about building secure, scalable, and AI-powered systems.<br>I enjoy transforming complex security problems into practical, real-world solutions using modern tech stacks, AI/LLMs, and clean system design.<br><br>🚀 I’m currently working on<br>CyberRakshak – an AI-powered vulnerability analysis platform integrating Nmap, Nuclei, Nikto & OpenVAS with CVE/CVSS intelligence<br>LLM + RAG pipelines for cybersecurity use-cases (threat analysis, remediation insights)<br>Scalable backend systems using FastAPI, async workflows, and REST APIs<br><br>🤝 I’m looking to collaborate on<br>Cybersecurity tools & SOC platforms<br>AI / LLM / RAG-based applications<br>Open-source security automation projects<br>Hackathon & problem-statement driven products<br><br>🆘 I’m looking for help with<br>Advanced LLM optimization & evaluation<br>Security data pipelines at scale<br>Cloud-native DevSecOps practices<br>Improving real-time vulnerability correlation<br><br>🌱 I’m currently learning<br>Advanced cybersecurity concepts (threat modeling, remediation workflows)<br>LLM orchestration & vector databases<br>System design for large-scale platforms<br>Docker & Linux-based deployment pipelines<br><br>💬 Ask me about<br>Cybersecurity tools (Nmap, Nuclei, OpenVAS, CVE/CVSS)<br>FastAPI, REST APIs & backend architecture<br>AI chatbots, RAG systems & embeddings<br>Hackathons, Smart India Hackathon & team leadership
 
 
 ## 🌐 Socials:
@@ -12,16 +12,7 @@
 ![](https://nirzak-streak-stats.vercel.app/?user=buildwithshikhar&theme=dark&hide_border=false)<br/>
 ![](https://github-readme-stats.vercel.app/api/top-langs/?username=buildwithshikhar&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=buildwithshikhar&theme=radical&no-frame=false&no-bg=false&margin-w=4)
-
-### ✍️ Random Dev Quote
-![](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
-
 ### 🔝 Top Contributed Repo
 ![](https://github-contributor-stats.vercel.app/api?username=buildwithshikhar&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
----
-[![](https://visitcount.itsvg.in/api?id=buildwithshikhar&icon=0&color=0)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
