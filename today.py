@@ -458,27 +458,9 @@ if __name__ == '__main__':
     formatter('account data', user_time)
     age_data = ''  # Age calculation removed - not needed
     
-    # Fetch GitHub stats dynamically - NO HARDCODED VALUES
-    # All stats are fetched from GitHub API using USER_NAME
-    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
-    formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
-    commit_data, commit_time = perf_counter(commit_counter, 7)  # Dynamic: counts commits from cache
-    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])  # Dynamic: fetches from API
-    repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])  # Dynamic: fetches from API
-    contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])  # Dynamic: fetches from API
-    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)  # Dynamic: fetches from API
+    # GitHub Stats section has been removed and replaced with Competitive/Current sections
+    # SVG files now contain static Competitive and Current sections - no dynamic updates needed
+    # The svg_overwrite function is no longer called as the new sections are static
 
-    # Archived repository data can be added here if needed
-
-    for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index]) # format added, deleted, and total LOC
-
-    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-
-    # move cursor to override 'Calculation times:' with 'Total function time:' and the total function time, then move cursor back
-    print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
-        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (user_time + loc_time + commit_time + star_time + repo_time + contrib_time)),
-        ' s \033[E\033[E\033[E\033[E\033[E\033[E\033[E', sep='')
-
-    print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
-    for funct_name, count in QUERY_COUNT.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
+    # Summary
+    print('\033[F', '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % user_time), ' s \033[E', sep='')
