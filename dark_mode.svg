@@ -45,11 +45,11 @@ text, tspan {white-space: pre;}
 </text>
 <text x="390" y="30" fill="#c9d1d9">
 <tspan x="390" y="30">shikhar@dixit</tspan> -———————————————————————————————————————————-—-
-<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">macOS</tspan>
-<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc" id="age_data_dots"> ...................... </tspan><tspan class="value" id="age_data"></tspan>
-<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ............................. </tspan><tspan class="value"></tspan>
-<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ...... </tspan><tspan class="value"></tspan>
-<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">VS Code</tspan>
+<tspan x="390" y="50" class="cc">. </tspan><tspan class="key">OS</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">macOS Tahoe, Linux (Kernel 6.x), iOS 18</tspan>
+<tspan x="390" y="70" class="cc">. </tspan><tspan class="key">Codeforces</tspan>:<tspan class="cc"> ............................... </tspan><tspan class="value">devwithshikhar</tspan>
+<tspan x="390" y="90" class="cc">. </tspan><tspan class="key">LeetCode</tspan>:<tspan class="cc"> ................................ </tspan><tspan class="value">codewithshikhar</tspan>
+<tspan x="390" y="110" class="cc">. </tspan><tspan class="key">Portfolio</tspan>:<tspan class="cc"> ....................... </tspan><tspan class="value">shikhardixit.vercel.app</tspan>
+<tspan x="390" y="130" class="cc">. </tspan><tspan class="key">IDE</tspan>:<tspan class="cc"> .................... </tspan><tspan class="value">VS Code 1.96.0, JetBrains 2024.x</tspan>
 <tspan x="390" y="150" class="cc">. </tspan>
 <tspan x="390" y="170" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">Python, JavaScript, C++, Java</tspan>
 <tspan x="390" y="190" class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ......... </tspan><tspan class="value">HTML, CSS, JSON</tspan>
