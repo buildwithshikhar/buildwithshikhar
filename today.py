@@ -316,20 +316,18 @@ def stars_counter(data):
     return total_stars
 
 
-def svg_overwrite(filename, age_data, commit_data, star_data, repo_data, contrib_data, follower_data, loc_data):
+def svg_overwrite(filename):
     """
-    Parse SVG files and update elements with my age, commits, stars, repositories, and lines written
+    Parse SVG files and update elements with Competitive & Current section
     """
     tree = etree.parse(filename)
     root = tree.getroot()
-    justify_format(root, 'commit_data', commit_data, 22)
-    justify_format(root, 'star_data', star_data, 14)
-    justify_format(root, 'repo_data', repo_data, 6)
-    justify_format(root, 'contrib_data', contrib_data)
-    justify_format(root, 'follower_data', follower_data, 10)
-    justify_format(root, 'loc_data', loc_data[2], 9)
-    justify_format(root, 'loc_add', loc_data[0])
-    justify_format(root, 'loc_del', loc_data[1], 7)
+    # Competitive & Current section
+    # Format: '. ' (2) + key + ':' (1) + dots + value = 60 chars
+    # justify_format length = target width for (dots + value)
+    justify_format(root, 'competitive_focus', 'Problem Solving, Algorithms', 40)  # 13 dots + 27 value
+    justify_format(root, 'competitive_progress', '300+ Problems Solved', 37)  # 17 dots + 20 value
+    justify_format(root, 'current_focus', 'CyberRakshak Platform', 44)  # 23 dots + 21 value
     tree.write(filename, encoding='utf-8', xml_declaration=True)
 
 
@@ -441,44 +439,16 @@ if __name__ == '__main__':
     """
     Shikhar (buildwithshikhar), 2022-2025
     
-    GitHub Stats are fetched dynamically using GitHub GraphQL API.
-    All stats (repos, stars, commits, followers, LOC) are bound to USER_NAME
-    which should be set to 'buildwithshikhar' via environment variable.
-    No hardcoded values are used - all stats are fetched from GitHub API.
+    Profile README renders Competitive & Current section with static content.
     """
-    print('Calculation times:')
     # Verify USER_NAME is set (should be 'buildwithshikhar')
     if not USER_NAME or USER_NAME.strip() == '':
         raise ValueError("USER_NAME environment variable must be set to 'buildwithshikhar'")
     
-    # define global variable for owner ID and calculate user's creation date
-    # e.g {'id': 'MDQ6VXNlcjU3MzMxMTM0'} and 2019-11-03T21:15:07Z for username 'buildwithshikhar'
+    # define global variable for owner ID (needed for some helper functions)
     user_data, user_time = perf_counter(user_getter, USER_NAME)
     OWNER_ID, acc_date = user_data
-    formatter('account data', user_time)
-    age_data = ''  # Age calculation removed - not needed
     
-    # Fetch GitHub stats dynamically - NO HARDCODED VALUES
-    # All stats are fetched from GitHub API using USER_NAME
-    total_loc, loc_time = perf_counter(loc_query, ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
-    formatter('LOC (cached)', loc_time) if total_loc[-1] else formatter('LOC (no cache)', loc_time)
-    commit_data, commit_time = perf_counter(commit_counter, 7)  # Dynamic: counts commits from cache
-    star_data, star_time = perf_counter(graph_repos_stars, 'stars', ['OWNER'])  # Dynamic: fetches from API
-    repo_data, repo_time = perf_counter(graph_repos_stars, 'repos', ['OWNER'])  # Dynamic: fetches from API
-    contrib_data, contrib_time = perf_counter(graph_repos_stars, 'repos', ['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'])  # Dynamic: fetches from API
-    follower_data, follower_time = perf_counter(follower_getter, USER_NAME)  # Dynamic: fetches from API
-
-    # Archived repository data can be added here if needed
-
-    for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index]) # format added, deleted, and total LOC
-
-    svg_overwrite('dark_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-    svg_overwrite('light_mode.svg', age_data, commit_data, star_data, repo_data, contrib_data, follower_data, total_loc[:-1])
-
-    # move cursor to override 'Calculation times:' with 'Total function time:' and the total function time, then move cursor back
-    print('\033[F\033[F\033[F\033[F\033[F\033[F\033[F',
-        '{:<21}'.format('Total function time:'), '{:>11}'.format('%.4f' % (user_time + loc_time + commit_time + star_time + repo_time + contrib_time)),
-        ' s \033[E\033[E\033[E\033[E\033[E\033[E\033[E', sep='')
-
-    print('Total GitHub GraphQL API calls:', '{:>3}'.format(sum(QUERY_COUNT.values())))
-    for funct_name, count in QUERY_COUNT.items(): print('{:<28}'.format('   ' + funct_name + ':'), '{:>6}'.format(count))
+    # Render Competitive & Current section (static content)
+    svg_overwrite('dark_mode.svg')
+    svg_overwrite('light_mode.svg')
