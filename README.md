@@ -1,5 +1,8 @@
 <!-- Profile README scaffold -->
 <p align="center">
-  <b>Profile under active improvement 🚧</b><br/>
-  Building a clean, automated, recruiter-grade GitHub profile.
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
+    <source media="(prefers-color-scheme: light)" srcset="light_mode.svg">
+    <img alt="Profile" src="light_mode.svg">
+  </picture>
 </p>
