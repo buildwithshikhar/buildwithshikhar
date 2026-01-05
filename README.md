@@ -1,8 +1,10 @@
 <!-- Profile README scaffold -->
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg">
-    <source media="(prefers-color-scheme: light)" srcset="light_mode.svg">
-    <img alt="Profile" src="light_mode.svg">
-  </picture>
+  <img 
+    src="https://raw.githubusercontent.com/buildwithshikhar/buildwithshikhar/main/dark_mode.svg#gh-dark-mode-only" 
+    alt="Profile" />
+  <img 
+    src="https://raw.githubusercontent.com/buildwithshikhar/buildwithshikhar/main/light_mode.svg#gh-light-mode-only" 
+    alt="Profile" />
 </p>
+
