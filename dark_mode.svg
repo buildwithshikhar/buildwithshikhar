@@ -42,6 +42,11 @@ text, tspan {white-space: pre;}
 <tspan x="15" y="470">       @@@@@@@@%%kgki!|jjjj%k%@ .          </tspan>
 <tspan x="15" y="490">. ^['' %@@@@HH%b%k{illljkjj%%%% ; `,.      </tspan>
 <tspan x="15" y="510">=[' ` . %HH%%%%%H@gkilljjj%kk%".   `'i</tspan>
+<tspan x="15" y="530">     `'`  . %%%%H%H%H%H%g%k%k%k%k%".   `'</tspan>
+<tspan x="15" y="550">        `'`  . %%%%H%H%H%H%g%k%k%k%k%".   </tspan>
+<tspan x="15" y="570">           `'`  . %%%%H%H%H%H%g%k%k%k%k%".</tspan>
+<tspan x="15" y="590">              `'`  . %%%%H%H%H%H%g%k%k%k%</tspan>
+<tspan x="15" y="610">                 `'`  . %%%%H%H%H%H%g%k%k</tspan>
 </text>
 <text x="390" y="30" fill="#c9d1d9">
 <tspan x="390" y="30">shikhar@dixit</tspan> -———————————————————————————————————————————-—-
