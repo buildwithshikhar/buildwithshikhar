@@ -65,7 +65,7 @@ text, tspan {white-space: pre;}
 <tspan x="390" y="370" class="cc">. </tspan><tspan class="key">Email</tspan>.<tspan class="key">College</tspan>:<tspan class="cc"> ............... </tspan><tspan class="value">shikhar.dixit.cs28@iilm.edu</tspan>
 <tspan x="390" y="390" class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ........................ </tspan><tspan class="value">shikhar-dixit-27214931a</tspan>
 <tspan x="390" y="410" class="cc">. </tspan><tspan class="key">Discord</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">shikhardixit</tspan>
-<tspan x="390" y="450">- Competitive & Current</tspan> -—————————————————————————————————————————-—-
+<tspan x="390" y="450">- Competitive &amp; Current</tspan> -—————————————————————————————————————————-—-
 <tspan x="390" y="470" class="cc">. </tspan><tspan class="key">Competitive</tspan>.<tspan class="key">Focus</tspan>:<tspan class="cc" id="competitive_focus_dots"> ........... </tspan><tspan class="value" id="competitive_focus">Problem Solving, Algorithms</tspan>
 <tspan x="390" y="490" class="cc">. </tspan><tspan class="key">Competitive</tspan>.<tspan class="key">Progress</tspan>:<tspan class="cc" id="competitive_progress_dots"> ............... </tspan><tspan class="value" id="competitive_progress">300+ Problems Solved</tspan>
 <tspan x="390" y="510" class="cc">. </tspan><tspan class="key">Current</tspan>.<tspan class="key">Focus</tspan>:<tspan class="cc" id="current_focus_dots"> ..................... </tspan><tspan class="value" id="current_focus">CyberRakshak Platform</tspan>
