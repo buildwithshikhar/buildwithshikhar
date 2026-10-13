@@ -5,7 +5,7 @@ Source photo: assets/portrait_source.png (oval crop is auto-detected: rows 250-1
 import numpy as np, cv2
 from xml.sax.saxutils import escape
 
-COLS, FONT, CHAR_W, LINE_H = 100, 8, 4.4, 9
+COLS, FONT, CHAR_W, LINE_H = 116, 8, 4.4, 9
 RAMP = " .,:;-=+*#%@"
 
 def portrait(invert):
@@ -36,6 +36,9 @@ CW2 = 8.6
 def kv(k, v):
     dots = '.'*max(2, W_LINE-len(k)-len(v)-4)
     return f'<tspan class="cc">. </tspan><tspan class="key">{escape(k)}</tspan>:<tspan class="cc"> {dots} </tspan><tspan class="value">{escape(v)}</tspan>'
+def link(u):
+    dots = '.'*max(2, W_LINE-len(u)-4)
+    return f'<tspan class="cc">. </tspan><tspan class="cc">↳ </tspan><tspan class="cc">{dots[2:]} </tspan><tspan class="value">{escape(u)}</tspan>'
 def head(t): return f'{escape(t)} ' + '—'*(W_LINE-len(t)-2)
 
 INFO = [
@@ -83,11 +86,13 @@ THEMES = {
 
 def build(fn, t):
     art = portrait(t['inv'])
-    art_h = len(art)*LINE_H
+    text_h = (len(INFO)-1)*20 + 12          # first baseline 30 .. last baseline
+    lh = text_h/len(art)                     # stretch line pitch so portrait matches text height
+    art_h = text_h
     info_x = int(15+COLS*CHAR_W+30)
     width = info_x + int((W_LINE+1)*CW2) + 25
-    height = max(art_h, len(INFO)*20) + 50
-    top = 30 + (height-30-art_h)//2 - 10
+    height = text_h + 60
+    top = 22 + lh
     out = [f"<?xml version='1.0' encoding='UTF-8'?>",
       f'<svg xmlns="http://www.w3.org/2000/svg" font-family="ConsolasFallback,Consolas,monospace" width="{width}px" height="{height}px" font-size="16px">',
       "<style>\n@font-face {\nsrc: local('Consolas'), local('Consolas Bold');\nfont-family: 'ConsolasFallback';\nfont-display: swap;\n-webkit-size-adjust: 109%;\nsize-adjust: 109%;\n}",
@@ -95,14 +100,14 @@ def build(fn, t):
       f'<rect width="{width}px" height="{height}px" fill="{t["bg"]}" rx="15"/>',
       f'<text fill="{t["art"]}" class="ascii" font-size="{FONT}px">']
     for i, l in enumerate(art):
-        out.append(f'<tspan x="15" y="{top+i*LINE_H}" textLength="{COLS*CHAR_W:.0f}" lengthAdjust="spacing">{escape(l.ljust(COLS))}</tspan>')
+        out.append(f'<tspan x="15" y="{top+i*lh:.1f}" textLength="{COLS*CHAR_W:.0f}" lengthAdjust="spacing">{escape(l.ljust(COLS))}</tspan>')
     out.append('</text>')
     out.append(f'<text x="{info_x}" y="30" fill="{t["fg"]}">')
     y = 30
     for row in INFO:
         if row[0] == 'head': out.append(f'<tspan x="{info_x}" y="{y}" textLength="{(W_LINE-1)*CW2:.0f}" lengthAdjust="spacing">{head(row[1])}</tspan>')
         elif row[0] == 'kv': out.append(f'<tspan x="{info_x}" y="{y}" textLength="{(W_LINE+1)*CW2:.0f}" lengthAdjust="spacing">{kv(row[1], row[2])}</tspan>')
-        elif row[0] == 'link': out.append(f'<tspan x="{info_x}" y="{y}"><tspan class="cc">.   ↳ </tspan><tspan class="value">{escape(row[1])}</tspan></tspan>')
+        elif row[0] == 'link': out.append(f'<tspan x="{info_x}" y="{y}" textLength="{(W_LINE+1)*CW2:.0f}" lengthAdjust="spacing">{link(row[1])}</tspan>')
         y += 20
     out.append('</text>\n</svg>\n')
     open(fn, 'w', encoding='utf-8').write('\n'.join(out))
