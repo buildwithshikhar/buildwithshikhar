@@ -56,9 +56,14 @@ INFO = [
  ('kv', 'Tools', 'Git, Linux, macOS'),
  ('blank',),
  ('head', 'Projects'),
- ('kv', 'CyberRakshak', 'AI-assisted vulnerability analysis'),
- ('kv', 'SewaSetu', 'reporting platform, ~30% faster'),
- ('kv', 'Seedify', 'co-authored research paper'),
+ ('kv', 'CyberRakshak', 'AI cyber-risk quantification'),
+ ('link', 'github.com/Ashirogi-Muto/CyberRakshak'),
+ ('kv', 'Nirikshan', 'DVR/NVR forensic analysis tool'),
+ ('link', 'github.com/buildwithshikhar/Nirikshan'),
+ ('kv', 'Drishti', 'IPsec VPN traffic analyzer'),
+ ('link', 'github.com/buildwithshikhar/Drishti'),
+ ('kv', 'SewaSetu', 'AI civic-issue triage platform'),
+ ('link', 'github.com/buildwithshikhar/SewaSetu'),
  ('blank',),
  ('head', 'Contact'),
  ('kv', 'Portfolio', 'shikhardixit.framer.website'),
@@ -66,10 +71,9 @@ INFO = [
  ('kv', 'Phone', '+91 88649 51603'),
  ('kv', 'LinkedIn', 'shikhar-dixit-27214931a'),
  ('kv', 'LeetCode', 'codewithshikhar'),
- ('kv', 'Codeforces', 'devwithshikhar'),
  ('blank',),
  ('head', 'Current'),
- ('kv', 'Focus', 'AI memory forensics @ NTRO · CORTEX'),
+ ('kv', 'Focus', 'Stealth startup'),
 ]
 
 THEMES = {
@@ -98,6 +102,7 @@ def build(fn, t):
     for row in INFO:
         if row[0] == 'head': out.append(f'<tspan x="{info_x}" y="{y}" textLength="{(W_LINE-1)*CW2:.0f}" lengthAdjust="spacing">{head(row[1])}</tspan>')
         elif row[0] == 'kv': out.append(f'<tspan x="{info_x}" y="{y}" textLength="{(W_LINE+1)*CW2:.0f}" lengthAdjust="spacing">{kv(row[1], row[2])}</tspan>')
+        elif row[0] == 'link': out.append(f'<tspan x="{info_x}" y="{y}"><tspan class="cc">.   ↳ </tspan><tspan class="value">{escape(row[1])}</tspan></tspan>')
         y += 20
     out.append('</text>\n</svg>\n')
     open(fn, 'w', encoding='utf-8').write('\n'.join(out))
