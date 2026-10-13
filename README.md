@@ -1,1 +1,1 @@
-![Profile](https://raw.githubusercontent.com/buildwithshikhar/buildwithshikhar/main/dark_mode.svg)
+![Profile](https://raw.githubusercontent.com/buildwithshikhar/buildwithshikhar/main/dark_mode.svg?v=3)

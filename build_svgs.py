@@ -14,6 +14,7 @@ def portrait(invert):
     m = np.zeros((h, w), np.uint8)
     cv2.ellipse(m, (w//2, h//2), (w//2-4, h//2-4), 0, 0, 360, 255, -1)
     g = cv2.bilateralFilter(g, 9, 40, 9)
+    g = cv2.createCLAHE(clipLimit=1.8, tileGridSize=(3, 3)).apply(g)   # local contrast so features read at small size
     fr = g[190:600, 190:500].astype(float)
     lo, hi = np.percentile(fr, 2), np.percentile(fr, 97)
     x = np.clip((g.astype(float)-lo)/(hi-lo), 0, 1) ** 0.6
